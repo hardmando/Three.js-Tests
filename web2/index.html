@@ -21,9 +21,11 @@
         renderer.setSize( window.innerWidth, window.innerHeight );
         document.body.appendChild( renderer.domElement );
 
-        const light = new THREE.PointLight( 0xffffff, 1, 100 );
+        const light = new THREE.DirectionalLight( 0xffffff, 1 );
         light.position.set( 10, 0, 7 );
         light.castShadow = true; // default false
+        light.shadow.radius = 20;
+
 
 
         light.shadow.mapSize.width = 2048; // default
@@ -53,16 +55,6 @@
 
         camera.position.z = 7;
 
-        addEventListener("moveRight", (moveRight) => {moveRight.keyCode === 68});
-
-        addEventListener("moveLeft", (moveLeft) => {moveLeft.keyCode === 65});
-
-        onkeydown = (moveRight) => {
-            cube.position.x += 1;
-        }
-        onkeydown = (moveLeft) => {
-            cube.position.x -= 1;
-        }
 
         function animate() {
             requestAnimationFrame( animate );
