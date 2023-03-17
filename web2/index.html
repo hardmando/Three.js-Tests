@@ -7,10 +7,22 @@
         body { margin: 0; }
     </style>
     <link rel="stylesheet" href="index.css">
+
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.150.0/build/three.module.js",
+                "GLTFLoader": "https://unpkg.com/three@0.150.1/examples/jsm/loaders/GLTFLoader.js"
+            }
+        }
+    </script>
+
 </head>
 <body>
     <script type="module">
-        import * as THREE from 'https://unpkg.com/three/build/three.module.js';
+        import { GLTFLoader } from 'GLTFLoader';
+        import * as THREE from 'three';
+
         // Our Javascript will go here.
 
         THREE.ColorManagement.enabled = true;
@@ -26,7 +38,16 @@
         light.castShadow = true; // default false
         light.shadow.radius = 20;
 
-
+        const loader = new GLTFLoader();
+        loader.load('./models/Shrek.glb', function ( gltf )
+        {
+            let shrek = gltf.scene;  // sword 3D object is loaded
+            shrek.scale.set(1, 1, 1);
+            shrek.position.y = -50;
+            shrek.position.x = 0;
+            shrek.position.z = -100;
+            scene.add(shrek);
+        } );
 
         light.shadow.mapSize.width = 2048; // default
         light.shadow.mapSize.height = 2048; // default
@@ -43,14 +64,14 @@
         scene.add( cube );
 
 
-
+        /*
         const planeGeometry = new THREE.PlaneGeometry( 20, 20, 32, 32 );
         const planeMaterial = new THREE.MeshStandardMaterial( { color: 0x00ff00 } )
         const plane = new THREE.Mesh( planeGeometry, planeMaterial );
         plane.receiveShadow = true;
         plane.castShadow = true;
         scene.add( plane );
-
+        */
         renderer.shadowMap.enabled = true;
 
         camera.position.z = 7;
