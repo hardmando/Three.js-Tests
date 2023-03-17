@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>My first three.js app</title>
+    <style>
+        body { margin: 0; }
+    </style>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <script type="module">
+        import * as THREE from 'https://unpkg.com/three/build/three.module.js';
+        // Our Javascript will go here.
+
+        THREE.ColorManagement.enabled = true;
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize( window.innerWidth, window.innerHeight );
+        document.body.appendChild( renderer.domElement );
+
+        const light = new THREE.PointLight( 0xffffff, 1, 100 );
+        light.position.set( 10, 0, 7 );
+        light.castShadow = true; // default false
+
+
+        light.shadow.mapSize.width = 2048; // default
+        light.shadow.mapSize.height = 2048; // default
+        light.shadow.camera.near = 0.5; // default
+        light.shadow.camera.far = 500;
+        scene.add( light );
+
+
+        const cubeGeometry = new THREE.BoxGeometry( 1, 1, 1 );
+        const cubeMaterial = new THREE.MeshStandardMaterial( { color: 0x00ff00 } )
+        const cube = new THREE.Mesh( cubeGeometry, cubeMaterial );
+        cube.receiveShadow = true;
+        cube.castShadow = true;
+        scene.add( cube );
+
+
+
+        const planeGeometry = new THREE.PlaneGeometry( 20, 20, 32, 32 );
+        const planeMaterial = new THREE.MeshStandardMaterial( { color: 0x00ff00 } )
+        const plane = new THREE.Mesh( planeGeometry, planeMaterial );
+        plane.receiveShadow = true;
+        plane.castShadow = true;
+        scene.add( plane );
+
+        renderer.shadowMap.enabled = true;
+
+        camera.position.z = 7;
+
+        addEventListener("moveRight", (moveRight) => {moveRight.keyCode === 68});
+
+        addEventListener("moveLeft", (moveLeft) => {moveLeft.keyCode === 65});
+
+        onkeydown = (moveRight) => {
+            cube.position.x += 1;
+        }
+        onkeydown = (moveLeft) => {
+            cube.position.x -= 1;
+        }
+
+        function animate() {
+            requestAnimationFrame( animate );
+            cube.rotation.x += 0.01;
+            cube.rotation.y += 0.01;
+            renderer.render( scene, camera );
+        }
+        animate();
+    </script>
+
+
+</body>
+</html>
