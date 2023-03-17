@@ -7,7 +7,6 @@
         body { margin: 0; }
     </style>
     <link rel="stylesheet" href="index.css">
-
     <script type="importmap">
         {
             "imports": {
@@ -16,67 +15,70 @@
             }
         }
     </script>
-
 </head>
+
 <body>
     <script type="module">
+
+        //Imports
         import { GLTFLoader } from 'GLTFLoader';
         import * as THREE from 'three';
 
-        // Our Javascript will go here.
-
-        THREE.ColorManagement.enabled = true;
+        //Variables
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
-
         const renderer = new THREE.WebGLRenderer();
         renderer.setSize( window.innerWidth, window.innerHeight );
         document.body.appendChild( renderer.domElement );
-
         const light = new THREE.DirectionalLight( 0xffffff, 1 );
-        light.position.set( 10, 0, 7 );
-        light.castShadow = true; // default false
-        light.shadow.radius = 20;
-
         const loader = new GLTFLoader();
-        loader.load('./models/Shrek.glb', function ( gltf )
-        {
-            let shrek = gltf.scene;  // sword 3D object is loaded
-            shrek.scale.set(1, 1, 1);
-            shrek.position.y = -50;
-            shrek.position.x = 0;
-            shrek.position.z = -100;
-            scene.add(shrek);
-        } );
 
-        light.shadow.mapSize.width = 2048; // default
-        light.shadow.mapSize.height = 2048; // default
-        light.shadow.camera.near = 0.5; // default
-        light.shadow.camera.far = 500;
-        scene.add( light );
-
-
+        //Objects
         const cubeGeometry = new THREE.BoxGeometry( 1, 1, 1 );
         const cubeMaterial = new THREE.MeshStandardMaterial( { color: 0x00ff00 } )
         const cube = new THREE.Mesh( cubeGeometry, cubeMaterial );
-        cube.receiveShadow = true;
-        cube.castShadow = true;
-        scene.add( cube );
-
 
         /*
         const planeGeometry = new THREE.PlaneGeometry( 20, 20, 32, 32 );
         const planeMaterial = new THREE.MeshStandardMaterial( { color: 0x00ff00 } )
         const plane = new THREE.Mesh( planeGeometry, planeMaterial );
+        */
+
+        //Shrek Loader
+        loader.load('./models/Shrek.glb', function ( gltf )
+        {
+            let shrek = gltf.scene;
+            shrek.scale.set(0.7, 0.7, 0.7);
+            shrek.position.y = -25;
+            shrek.position.x = 0;
+            shrek.position.z = -100;
+            scene.add(shrek);
+        } );
+
+        //Light Arguments
+        light.position.set( 10, 0, 7 );
+        light.castShadow = true; // default false
+        light.shadow.radius = 20;
+        light.shadow.mapSize.width = 2048;
+        light.shadow.mapSize.height = 2048;
+        light.shadow.camera.near = 0.5;
+        light.shadow.camera.far = 500;
+        scene.add( light );
+        //Cube Arguments
+        cube.receiveShadow = true;
+        cube.castShadow = true;
+        scene.add( cube );
+        /*
         plane.receiveShadow = true;
         plane.castShadow = true;
         scene.add( plane );
         */
+
         renderer.shadowMap.enabled = true;
 
         camera.position.z = 7;
 
-
+        //Cube Animation
         function animate() {
             requestAnimationFrame( animate );
             cube.rotation.x += 0.01;
@@ -85,7 +87,6 @@
         }
         animate();
     </script>
-
 
 </body>
 </html>
