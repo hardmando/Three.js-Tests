@@ -11,7 +11,8 @@
         {
             "imports": {
                 "three": "https://unpkg.com/three@0.150.0/build/three.module.js",
-                "GLTFLoader": "https://unpkg.com/three@0.150.1/examples/jsm/loaders/GLTFLoader.js"
+                "GLTFLoader": "https://unpkg.com/three@0.150.1/examples/jsm/loaders/GLTFLoader.js",
+                "TextureLoader": "https://unpkg.com/three@0.150.1/src/loaders/TextureLoader.js"
             }
         }
     </script>
@@ -23,6 +24,7 @@
         //Imports
         import { GLTFLoader } from 'GLTFLoader';
         import * as THREE from 'three';
+        import { TextureLoader } from 'TextureLoader';
 
         //Variables
         const scene = new THREE.Scene();
@@ -31,23 +33,25 @@
         renderer.setSize( window.innerWidth, window.innerHeight );
         document.body.appendChild( renderer.domElement );
         const light = new THREE.DirectionalLight( 0xffffff, 1 );
-        const loader = new GLTFLoader();
+        const modelsLoader = new GLTFLoader();
 
         //Objects
         const cubeGeometry = new THREE.BoxGeometry( 1, 1, 1 );
         const cubeMaterial = new THREE.MeshStandardMaterial( { color: 0x00ff00 } )
         const cube = new THREE.Mesh( cubeGeometry, cubeMaterial );
 
-        /*
-        const planeGeometry = new THREE.PlaneGeometry( 20, 20, 32, 32 );
-        const planeMaterial = new THREE.MeshStandardMaterial( { color: 0x00ff00 } )
+
+        const planeGeometry = new THREE.PlaneGeometry( 300, 300, 32, 32 );
+        const planeMaterial = new THREE.MeshStandardMaterial( { color: 0xaaaaaa } )
         const plane = new THREE.Mesh( planeGeometry, planeMaterial );
-        */
+
+
+
 
         //Shrek Loader
-        loader.load('./models/Shrek.glb', function ( gltf )
+        modelsLoader.load('./models/Shrek.gltf', function ( gltf )
         {
-            let shrek = gltf.scene;
+            const shrek = gltf.scene;
             shrek.scale.set(0.7, 0.7, 0.7);
             shrek.position.y = -25;
             shrek.position.x = 0;
@@ -55,8 +59,10 @@
             scene.add(shrek);
         } );
 
+
+
         //Light Arguments
-        light.position.set( 10, 0, 7 );
+        light.position.set( 1, 0, 7 );
         light.castShadow = true; // default false
         light.shadow.radius = 20;
         light.shadow.mapSize.width = 2048;
@@ -68,11 +74,14 @@
         cube.receiveShadow = true;
         cube.castShadow = true;
         scene.add( cube );
-        /*
+
         plane.receiveShadow = true;
         plane.castShadow = true;
+        plane.position.y = -25;
+        plane.position.x = 0;
+        plane.position.z = -140;
         scene.add( plane );
-        */
+
 
         renderer.shadowMap.enabled = true;
 
