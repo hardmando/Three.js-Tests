@@ -10,6 +10,7 @@ renderer.setSize( window.innerWidth, (window.innerHeight/3) );
 document.body.appendChild( renderer.domElement );
 const light = new THREE.DirectionalLight( 0xffffff, 1 );
 const modelsLoader = new GLTFLoader();
+let shrek;
 
 const planeGeometry = new THREE.PlaneGeometry( 300, 300, 32, 32 );
 const planeMaterial = new THREE.MeshStandardMaterial( { color: 0xaaaaaa } )
@@ -17,7 +18,7 @@ const plane = new THREE.Mesh( planeGeometry, planeMaterial );
 
 //Shrek Loader
 modelsLoader.load('./models/Shrek.gltf', function (gltf) {
-    const shrek = gltf.scene;
+    shrek = gltf.scene;
     shrek.scale.set(0.7, 0.7, 0.7);
     shrek.position.y = -32;
     shrek.position.x = 0;
@@ -51,6 +52,10 @@ camera.position.z = 7;
 function render() {
     requestAnimationFrame( render );
     renderer.render( scene, camera );
+    if (shrek) {
+        shrek.rotation.y += 0.02;
+    }
 }
+
 
 render();

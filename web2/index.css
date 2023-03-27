@@ -2,43 +2,56 @@
 .title{
     position: absolute;
     font-size: 80px;
-    margin-top: 60px;
-    alignment: center;
+    margin-top: 7%;
     background: #aaeeaa; /* light green color made from green that is a little bit more bright than blue and red */
     opacity: 90%;
-    text-decoration: none;
-    padding-left: 70%;
-    color: black;
+    width: 100vw;
     font-family: sans-serif;
     display: flex;
-    padding-right: 5%;
-
+    letter-spacing: 100px;
+}
+.title-text{
+    text-decoration: none;
+    color: black;
 }
 .title:hover{
     background: #aabbaa;
-    transition-duration: .5s;
+    transition-duration: 0.5s;
 }
 .navbar-list li{
     display:inline;
     padding: 0 10px;
-    background: #ccddcc;
-    font-size: 25px;
+    letter-spacing: 20px;
+    background: #99cc99;
+    font-size: 40px;
 }
 .navbar-list li:hover{
-    background: #bbccbb;
+    background: #88bb88;
     transition-duration: .3s;
     border-radius: 3px;
 }
 .navbar-list{
     position: absolute;
-    margin-top: 40vh;
-    margin-left: 0;
-    background: #ccddcc;
+    margin-top: 400px;
+    background: #99cc99;
     font-family: sans-serif;
-    padding-right: 76%;
-    padding-left:3%;
-    display:flex;
 }
+
+#text{
+    position: absolute;
+    text-align: justify;
+    opacity: 1;
+    margin-top: 30.5%;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-size: 2em;
+    font-weight: bold;
+    padding: 0 20%;
+    background-image: url("./images/Swamp.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 html{
     background: #ddeedd;
 }
