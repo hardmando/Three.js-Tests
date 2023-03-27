@@ -1,3 +1,44 @@
-.html{
-    float: left;
+
+.title{
+    position: absolute;
+    font-size: 80px;
+    margin-top: 60px;
+    alignment: center;
+    background: #aaeeaa; /* light green color made from green that is a little bit more bright than blue and red */
+    opacity: 90%;
+    text-decoration: none;
+    padding-left: 70%;
+    color: black;
+    font-family: sans-serif;
+    display: flex;
+    padding-right: 5%;
+
+}
+.title:hover{
+    background: #aabbaa;
+    transition-duration: .5s;
+}
+.navbar-list li{
+    display:inline;
+    padding: 0 10px;
+    background: #ccddcc;
+    font-size: 25px;
+}
+.navbar-list li:hover{
+    background: #bbccbb;
+    transition-duration: .3s;
+    border-radius: 3px;
+}
+.navbar-list{
+    position: absolute;
+    margin-top: 40vh;
+    margin-left: 0;
+    background: #ccddcc;
+    font-family: sans-serif;
+    padding-right: 76%;
+    padding-left:3%;
+    display:flex;
+}
+html{
+    background: #ddeedd;
 }

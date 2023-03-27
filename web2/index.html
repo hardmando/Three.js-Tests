@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>My first three.js app</title>
+    <title>Shrek</title>
     <style>
         body { margin: 0; }
     </style>
@@ -11,91 +11,23 @@
         {
             "imports": {
                 "three": "https://unpkg.com/three@0.150.0/build/three.module.js",
-                "GLTFLoader": "https://unpkg.com/three@0.150.1/examples/jsm/loaders/GLTFLoader.js",
-                "TextureLoader": "https://unpkg.com/three@0.150.1/src/loaders/TextureLoader.js"
+                "GLTFLoader": "https://unpkg.com/three@0.150.1/examples/jsm/loaders/GLTFLoader.js"
             }
         }
     </script>
 </head>
 
 <body>
-    <script type="module">
-
-        //Imports
-        import { GLTFLoader } from 'GLTFLoader';
-        import * as THREE from 'three';
-        import { TextureLoader } from 'TextureLoader';
-
-        //Variables
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
-        const renderer = new THREE.WebGLRenderer();
-        renderer.setSize( window.innerWidth, window.innerHeight );
-        document.body.appendChild( renderer.domElement );
-        const light = new THREE.DirectionalLight( 0xffffff, 1 );
-        const modelsLoader = new GLTFLoader();
-
-        //Objects
-        const cubeGeometry = new THREE.BoxGeometry( 1, 1, 1 );
-        const cubeMaterial = new THREE.MeshStandardMaterial( { color: 0x00ff00 } )
-        const cube = new THREE.Mesh( cubeGeometry, cubeMaterial );
-
-
-        const planeGeometry = new THREE.PlaneGeometry( 300, 300, 32, 32 );
-        const planeMaterial = new THREE.MeshStandardMaterial( { color: 0xaaaaaa } )
-        const plane = new THREE.Mesh( planeGeometry, planeMaterial );
-
-
-
-
-        //Shrek Loader
-        modelsLoader.load('./models/Shrek.gltf', function ( gltf )
-        {
-            const shrek = gltf.scene;
-            shrek.scale.set(0.7, 0.7, 0.7);
-            shrek.position.y = -25;
-            shrek.position.x = 0;
-            shrek.position.z = -100;
-            scene.add(shrek);
-        } );
-
-
-
-        //Light Arguments
-        light.position.set( 1, 0, 7 );
-        light.castShadow = true; // default false
-        light.shadow.radius = 20;
-        light.shadow.mapSize.width = 2048;
-        light.shadow.mapSize.height = 2048;
-        light.shadow.camera.near = 0.5;
-        light.shadow.camera.far = 500;
-        scene.add( light );
-        //Cube Arguments
-        cube.receiveShadow = true;
-        cube.castShadow = true;
-        scene.add( cube );
-
-        plane.receiveShadow = true;
-        plane.castShadow = true;
-        plane.position.y = -25;
-        plane.position.x = 0;
-        plane.position.z = -140;
-        scene.add( plane );
-
-
-        renderer.shadowMap.enabled = true;
-
-        camera.position.z = 7;
-
-        //Cube Animation
-        function animate() {
-            requestAnimationFrame( animate );
-            cube.rotation.x += 0.01;
-            cube.rotation.y += 0.01;
-            renderer.render( scene, camera );
-        }
-        animate();
-    </script>
-
+    <div>
+        <b><a href="shrekFullScreen.html" class="title">SHREK</a></b>
+    </div>
+    <div class = "navbar">
+        <ul class = "navbar-list">
+            <li><b><a>HOME</a></b></li>
+            <li><b><a>GALLERY</a></b></li>
+        </ul>
+    </div>
 </body>
+<script src = "index.js" type="module">
+</script>
 </html>
