@@ -1,5 +1,4 @@
-
-.title{
+.title {
     position: absolute;
     font-size: 80px;
     margin-top: 7%;
@@ -10,48 +9,127 @@
     display: flex;
     letter-spacing: 100px;
 }
-.title-text{
+
+.title-text {
     text-decoration: none;
     color: black;
 }
-.title:hover{
+
+.title-text:hover {
     background: #aabbaa;
     transition-duration: 0.5s;
 }
-.navbar-list li{
-    display:inline;
-    padding: 0 10px;
-    letter-spacing: 20px;
-    background: #99cc99;
-    font-size: 40px;
-}
-.navbar-list li:hover{
+.navbar-list li:hover {
     background: #88bb88;
     transition-duration: .3s;
     border-radius: 3px;
 }
-.navbar-list{
-    position: absolute;
-    margin-top: 400px;
-    background: #99cc99;
-    font-family: sans-serif;
+.navbar-list li a{
+    text-decoration: none;
+    color: black;
 }
 
-#text{
-    position: absolute;
-    text-align: justify;
-    opacity: 1;
-    margin-top: 30.5%;
-    font-family: sans-serif;
-    text-transform: uppercase;
-    font-size: 2em;
-    font-weight: bold;
-    padding: 0 20%;
-    background-image: url("./images/Swamp.png");
-    background-size: cover;
-    background-repeat: no-repeat;
+@media (min-width: 1462px) {
+
+    .navbar-list li {
+        display: inline;
+        padding: 0 10px;
+        letter-spacing: 20px;
+        background: #99cc99;
+        font-size: 40px;
+    }
+
+
+    .navbar-list {
+        position: absolute;
+        margin-top: 400px;
+        background: #99cc99;
+        font-family: sans-serif;
+    }
+
+    #text {
+        position: absolute;
+        text-align: justify;
+        opacity: 1;
+        margin-top: 30.5%;
+        font-family: sans-serif;
+        text-transform: uppercase;
+        font-size: 2em;
+        font-weight: bold;
+        padding: 0 20%;
+        background-image: url("./images/Swamp.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
 }
 
-html{
+
+@media (max-width: 1462px ) {
+
+    .navbar-list li {
+        display: inline;
+        padding: 0 10px;
+        letter-spacing: 20px;
+        background: #99cc99;
+        font-size: 40px;
+    }
+
+    .navbar-list {
+        position: absolute;
+        margin-top: 294px;
+        background: #99cc99;
+        font-family: sans-serif;
+    }
+
+    #text {
+        position: absolute;
+        text-align: justify;
+        opacity: 1;
+        margin-top: 30.5%;
+        font-family: sans-serif;
+        text-transform: uppercase;
+        font-size: 1.5em;
+        font-weight: bold;
+        padding: 0 20%;
+        background-image: url("./images/Swamp.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}
+@media (max-width: 1115px ) {
+
+    .navbar-list li {
+        display: inline;
+        padding: 0 10px;
+        letter-spacing: 20px;
+        background: #99cc99;
+        font-size: 40px;
+    }
+
+    .navbar-list {
+        position: absolute;
+        margin-top: 200px;
+        background: #99cc99;
+        font-family: sans-serif;
+    }
+
+    #text {
+        position: absolute;
+        text-align: justify;
+        opacity: 1;
+        margin-top: 30.5%;
+        font-family: sans-serif;
+        text-transform: uppercase;
+        font-size: 1em;
+        font-weight: bold;
+        padding: 0 20%;
+        background-image: url("./images/Swamp.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}
+
+html {
     background: #ddeedd;
 }
+

@@ -53,7 +53,7 @@ function render() {
     requestAnimationFrame( render );
     renderer.render( scene, camera );
     if (shrek) {
-        shrek.rotation.y += 0.02;
+        shrek.rotation.y += 0.01;
     }
 }
 
