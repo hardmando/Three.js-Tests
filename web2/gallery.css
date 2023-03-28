@@ -32,6 +32,8 @@
 #image1{
     background-image: url("./images/image1.webp");
     grid-area: 3 / 2 / 3 / span 2;
+    background-position: center;
+
 }
 #image2{
     background-image: url("./images/image2.jpg");
