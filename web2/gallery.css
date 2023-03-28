@@ -1,0 +1,63 @@
+.title {
+    position: absolute;
+    font-size: 80px;
+    margin-top: 5.1%;
+    background: #aaeeaa; /* light green color made from green that is a little bit more bright than blue and red */
+    opacity: 90%;
+    width: 100vw;
+    font-family: sans-serif;
+    display: flex;
+    letter-spacing: 100px;
+    padding: 0 0;
+}
+
+.title-text {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    margin: 0 0;
+}
+
+.wrapper{
+    display: grid;
+    grid-template-columns: 30vw 30vw 30vw;
+    grid-template-rows: 50vh 50vh 100vh;
+    position: absolute;
+    margin: 20% 5vw;
+}
+#image0{
+   background-image: url("./images/image0.jpeg");
+    grid-area: 1 / 1 / 1 / span 1;
+}
+#image1{
+    background-image: url("./images/image1.webp");
+    grid-area: 3 / 2 / 3 / span 2;
+}
+#image2{
+    background-image: url("./images/image2.jpg");
+    grid-area: 1 / 2 / 1 / span 2;
+}
+#image3{
+    background-image: url("./images/image3.jpg");
+    grid-area: 2 / 1 / 2 / span 2;
+    background-position: center;
+}
+#image4{
+    background-image: url("./images/image4.jpg");
+}
+#image5{
+    background-image: url("./images/image5.jpg");
+    background-position: center;
+}
+.image{
+    background-size: cover;
+    margin: 10px 10px;
+}
+#image3 a{
+    padding: 23.5vh 29.5vw;
+    position: absolute;
+    margin-top: 0;
+}
+html {
+    background: #ddeedd; /* lightest green color for backgorund made from green that is a little bit more bright than blue and red */
+}

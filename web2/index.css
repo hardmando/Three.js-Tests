@@ -16,11 +16,11 @@
 }
 
 .title-text:hover {
-    background: #aabbaa;
+    background: #aabbaa; /* even lighter green color made from green that is a little bit more bright than blue and red */
     transition-duration: 0.5s;
 }
 .navbar-list li:hover {
-    background: #88bb88;
+    background: #88bb88; /*  darker light green color for hover made from green that is a little bit more bright than blue and red */
     transition-duration: .3s;
     border-radius: 3px;
 }
@@ -29,13 +29,14 @@
     color: black;
 }
 
+
 @media (min-width: 1462px) {
 
     .navbar-list li {
         display: inline;
         padding: 0 10px;
         letter-spacing: 20px;
-        background: #99cc99;
+        background: #99cc99; /* light green color made from green that is a little bit more bright than blue and red */
         font-size: 40px;
     }
 
@@ -43,7 +44,7 @@
     .navbar-list {
         position: absolute;
         margin-top: 400px;
-        background: #99cc99;
+        background: #99cc99; /* light green color made from green that is a little bit more bright than blue and red */
         font-family: sans-serif;
     }
 
@@ -70,14 +71,14 @@
         display: inline;
         padding: 0 10px;
         letter-spacing: 20px;
-        background: #99cc99;
+        background: #99cc99; /* light green color made from green that is a little bit more bright than blue and red */
         font-size: 40px;
     }
 
     .navbar-list {
         position: absolute;
         margin-top: 294px;
-        background: #99cc99;
+        background: #99cc99; /* light green color made from green that is a little bit more bright than blue and red */
         font-family: sans-serif;
     }
 
@@ -102,14 +103,14 @@
         display: inline;
         padding: 0 10px;
         letter-spacing: 20px;
-        background: #99cc99;
+        background: #99cc99; /* light green color made from green that is a little bit more bright than blue and red */
         font-size: 40px;
     }
 
     .navbar-list {
         position: absolute;
         margin-top: 200px;
-        background: #99cc99;
+        background: #99cc99; /* light green color made from green that is a little bit more bright than blue and red */
         font-family: sans-serif;
     }
 
@@ -130,6 +131,6 @@
 }
 
 html {
-    background: #ddeedd;
+    background: #ddeedd; /* lightest green color for backgorund made from green that is a little bit more bright than blue and red */
 }
 

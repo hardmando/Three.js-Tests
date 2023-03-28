@@ -2,9 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <style>
+        body { margin: 0; }
+    </style>
     <title>Gallery</title>
+    <link rel="stylesheet" href="gallery.css">
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.150.0/build/three.module.js",
+                "GLTFLoader": "https://unpkg.com/three@0.150.1/examples/jsm/loaders/GLTFLoader.js"
+            }
+        }
+    </script>
 </head>
 <body>
+<div class="title">
+    <p class="title-text" >GALLERY</p>
+</div>
+
+<div class="wrapper">
+    <div class="image" id="image0"></div>
+    <div class="image" id="image1"></div>
+    <div class="image" id="image2"></div>
+    <div class="image" id="image3"><a href="shrekFullScreen.html"></a></div>
+    <div class="image" id="image4"></div>
+    <div class="image" id="image5"></div>
+</div>
 
 </body>
+<script src = "index.js" type="module">
+</script>
 </html>
